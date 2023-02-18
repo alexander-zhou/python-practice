@@ -16,7 +16,7 @@ def numberOfWays(startPos: int, endPos: int, k: int) -> int:
     perform exactly k steps.
     """
     # start with path of length 1
-    paths = [startPos]
+    paths = [[startPos]]
 
     # loop k times
     for i in tqdm(range(k)):
@@ -31,7 +31,7 @@ def numberOfWays(startPos: int, endPos: int, k: int) -> int:
             new_path_left = new_path + [last_position - 1]
 
             # path that goes to the right
-            new_path_right = new_path + [last_position - 1]
+            new_path_right = new_path + [last_position + 1]
 
             # add paths to the left and right
             paths.append(new_path_left)
